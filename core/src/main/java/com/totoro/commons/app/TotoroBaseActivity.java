@@ -4,10 +4,10 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
 import com.totoro.commons.utils.ToastUtil;
 
@@ -22,7 +22,7 @@ import in.srain.cube.util.CubeDebug;
 /**
  * Created by Chen on 2015/4/22.
  */
-public class TotoroBaseActivity extends Activity implements IComponentContainer {
+public abstract class TotoroBaseActivity extends Activity implements IComponentContainer {
 
     private static final String TAG = TotoroBaseActivity.class.getSimpleName();
 
@@ -140,6 +140,10 @@ public class TotoroBaseActivity extends Activity implements IComponentContainer 
         if (DEBUG) {
             CLog.d(TAG, "onSentToBackground");
         }
+    }
+
+    protected Intent getDefaultIntent(Class<?> cls) {
+        return new Intent(this, cls);
     }
 
     @Override
