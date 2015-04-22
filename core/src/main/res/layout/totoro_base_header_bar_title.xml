@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/ly_title_bar_left"
         android:layout_width="100dp"
-        android:layout_height="@dimen/cube_mints_header_height"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:gravity="center_vertical"
         android:paddingLeft="12dp">
@@ -35,7 +35,7 @@
             android:gravity="center"
             android:singleLine="true"
             android:textColor="#fff"
-            android:textSize="17sp" />
+            android:textSize="18sp" />
     </RelativeLayout>
 
     <RelativeLayout

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.provider.Settings;
 
+import com.totoro.commons.crashmanager.CrashManager;
+import com.totoro.commons.crashmanager.CrashManagerConstants;
 import com.totoro.commons.utils.ResourceUtil;
 
 import in.srain.cube.diskcache.lru.SimpleDiskLruCache;
@@ -48,6 +50,9 @@ public class Totoro {
             CubeDebug.DEBUG_CACHE = true;
             CubeDebug.DEBUG_IMAGE = true;
             CubeDebug.DEBUG_REQUEST = true;
+
+            CrashManagerConstants.loadFromContext(mApplication);
+            CrashManager.registerHandler();
         }
     }
 
