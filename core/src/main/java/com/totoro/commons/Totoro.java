@@ -3,10 +3,14 @@ package com.totoro.commons;
 import android.app.Application;
 import android.content.Context;
 import android.provider.Settings;
+import android.text.TextUtils;
 
 import com.totoro.commons.crashmanager.CrashManager;
 import com.totoro.commons.crashmanager.CrashManagerConstants;
+import com.totoro.commons.utils.PreferenceHelper;
 import com.totoro.commons.utils.ResourceUtil;
+
+import java.util.UUID;
 
 import in.srain.cube.diskcache.lru.SimpleDiskLruCache;
 import in.srain.cube.util.CLog;
@@ -18,6 +22,8 @@ import in.srain.cube.util.NetworkStatusManager;
  * Created by Chen on 2015/4/22.
  */
 public class Totoro {
+
+    private static final String APP_ID = "app_id";
 
     private static Totoro instance;
 
@@ -66,6 +72,19 @@ public class Totoro {
 
     public String getAndroidId() {
         String id = Settings.Secure.getString(mApplication.getContentResolver(), Settings.Secure.ANDROID_ID);
+        return id;
+    }
+
+    /**
+     * 获取App序列号
+     * @return
+     */
+    public String getAppId() {
+        String id = PreferenceHelper.getSharedPreferences(mApplication, APP_ID, "");
+        if (TextUtils.isEmpty(id)) {
+            id = UUID.randomUUID().toString().replaceAll("-", "");
+            PreferenceHelper.setEditor(mApplication, APP_ID, id);
+        }
         return id;
     }
 }
