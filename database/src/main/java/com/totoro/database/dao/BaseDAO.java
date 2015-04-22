@@ -25,7 +25,7 @@ import in.srain.cube.util.CLog;
 public abstract class BaseDAO<T extends EntityBase> {
 	
 	DbUtils db;
-	String TAG;
+	private String TAG;
     Class<? extends EntityBase> entityClazz;
 
     @SuppressWarnings("unchecked")
@@ -264,4 +264,7 @@ public abstract class BaseDAO<T extends EntityBase> {
         return data == null ? Collections.<T> emptyList() : data;
     }
 
+    public void setTAG(String TAG) {
+        this.TAG = TAG;
+    }
 }

@@ -26,8 +26,6 @@ public abstract class DatabaseManager {
 
     private static final String TAG = DatabaseManager.class.getSimpleName();
 
-    private static final int DB_VERSION = 1;
-
     private static DbUtils db;
 
     protected DatabaseManager(String packageNames) {
@@ -39,7 +37,8 @@ public abstract class DatabaseManager {
         if (db == null) {
             DbUtils.DaoConfig daoConfig = new DbUtils.DaoConfig(Totoro.getInstance().getContext());
             daoConfig.setDbName(getDbName());
-            daoConfig.setDbVersion(DB_VERSION);
+            daoConfig.setDbVersion(getDBVersion());
+            daoConfig.setDbUpgradeListener(getUpgradeListener());
 
             db = DbUtils.create(daoConfig);
             db.configAllowTransaction(true);
@@ -114,5 +113,9 @@ public abstract class DatabaseManager {
     public abstract String getDbName();
 
     public abstract ClassFilter getDAOFilter();
+
+    public abstract int getDBVersion();
+
+    public abstract DbUtils.DbUpgradeListener getUpgradeListener();
 
 }
