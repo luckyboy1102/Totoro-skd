@@ -24,7 +24,7 @@ import in.srain.cube.util.CLog;
 
 public abstract class BaseDAO<T extends EntityBase> {
 	
-	DbUtils db;
+	public DbUtils db;
 	private String TAG;
     Class<? extends EntityBase> entityClazz;
 
