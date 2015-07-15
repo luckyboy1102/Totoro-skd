@@ -46,5 +46,11 @@ public class ToastUtil {
     public static void showToast(Context context, int resId) {
         showToast(context, context.getString(resId));
     }
+
+    public static void recycle() {
+        if (toast != null) {
+            toast = null;
+        }
+    }
 }
 

@@ -44,4 +44,10 @@ public class ProgressDialogUtil {
             mDialog = null;
         }
     }
+
+    public static void recycle() {
+        if (mDialog != null) {
+            mDialog = null;
+        }
+    }
 }
