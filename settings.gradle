@@ -1,1 +1,1 @@
-include ':core', ':database'
+include ':core', ':database', ':database2'

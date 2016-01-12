@@ -10,8 +10,6 @@ public class ToastUtil {
 
     private static String oldMsg;
     protected static Toast toast = null;
-    private static long oneTime = 0;
-    private static long twoTime = 0;
 
     /**
      * 显示toast类
@@ -22,20 +20,10 @@ public class ToastUtil {
         if (toast == null) {
             toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
-            oneTime = System.currentTimeMillis();
         } else {
-            twoTime = System.currentTimeMillis();
-            if (text.equals(oldMsg)) {
-                if (twoTime - oneTime > Toast.LENGTH_SHORT) {
-                    toast.show();
-                }
-            } else {
-                oldMsg = text;
-                toast.setText(text);
-                toast.show();
-            }
+            toast.setText(text);
+            toast.show();
         }
-        oneTime = twoTime;
     }
 
     /**

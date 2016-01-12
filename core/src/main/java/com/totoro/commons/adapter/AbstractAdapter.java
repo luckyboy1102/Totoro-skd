@@ -68,7 +68,7 @@ public abstract class AbstractAdapter<T, Holder extends BaseViewHolder> extends 
             holder = (Holder) convertView.getTag();
         }
 
-        getItemView(position, holder);
+        getItemView(position, holder, convertView);
 
         return convertView;
     }
@@ -87,6 +87,6 @@ public abstract class AbstractAdapter<T, Holder extends BaseViewHolder> extends 
         notifyDataSetChanged();
     }
 
-    public abstract void getItemView(int position, Holder viewHolder);
+    public abstract void getItemView(int position, Holder viewHolder, View convertView);
 
 }

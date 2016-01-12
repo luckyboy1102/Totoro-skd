@@ -153,4 +153,10 @@ public class DateUtil {
         return mCalendar.getTime();
     }
 
+	public static Date setMillsec0(Date date) {
+		mCalendar.setTime(date);
+		mCalendar.set(Calendar.MILLISECOND, 0);
+		return mCalendar.getTime();
+	}
+
 }
