@@ -34,7 +34,7 @@ public abstract class TotoroBaseActivity extends Activity implements IComponentC
 
     @Override
     protected void onRestart() {
-        super.onStart();
+        super.onRestart();
         mComponentContainer.onBecomesVisibleFromTotallyInvisible();
         if (DEBUG) {
             showStatus("onRestart");
