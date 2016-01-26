@@ -9,9 +9,14 @@ import android.content.Context;
  */
 public class ProgressDialogUtil {
 
-    protected static ProgressDialog mDialog;
+    protected ProgressDialog mDialog;
+    protected Context context;
 
-    public static void showProgressDialog(Context context, int resId) {
+    public ProgressDialogUtil(Context context) {
+        this.context = context;
+    }
+
+    public void showProgressDialog(int resId) {
         if (mDialog == null) {
             mDialog = new ProgressDialog(context);
             mDialog.setMessage(context.getString(resId));
@@ -19,7 +24,7 @@ public class ProgressDialogUtil {
             mDialog.setIndeterminate(true);
             mDialog.show();
         } else {
-            setProgressDialogMessage(context, resId);
+            setProgressDialogMessage(resId);
             if (!mDialog.isShowing()) {
                 mDialog.show();
             }
@@ -29,7 +34,7 @@ public class ProgressDialogUtil {
     /**
      * Set ProgressDialog message
      */
-    public static void setProgressDialogMessage(Context context, int resId) {
+    public void setProgressDialogMessage(int resId) {
         if (mDialog != null) {
             mDialog.setMessage(context.getString(resId));
         }
@@ -38,15 +43,9 @@ public class ProgressDialogUtil {
     /**
      * Dismiss ProgressDialog
      */
-    public static void dismissProgressDialog() {
+    public void dismissProgressDialog() {
         if (mDialog != null) {
             mDialog.dismiss();
-            mDialog = null;
-        }
-    }
-
-    public static void recycle() {
-        if (mDialog != null) {
             mDialog = null;
         }
     }
