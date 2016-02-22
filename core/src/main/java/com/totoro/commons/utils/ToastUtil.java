@@ -8,15 +8,14 @@ import android.widget.Toast;
  */
 public class ToastUtil {
 
-    private static String oldMsg;
-    protected static Toast toast = null;
+    protected Toast toast = null;
 
     /**
      * 显示toast类
      * @param context
      * @param text
      */
-    public static void showToast(Context context, String text) {
+    public void showToast(Context context, String text) {
         if (toast == null) {
             toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
@@ -31,14 +30,8 @@ public class ToastUtil {
      * @param context
      * @param resId
      */
-    public static void showToast(Context context, int resId) {
+    public void showToast(Context context, int resId) {
         showToast(context, context.getString(resId));
-    }
-
-    public static void recycle() {
-        if (toast != null) {
-            toast = null;
-        }
     }
 }
 

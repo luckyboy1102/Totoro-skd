@@ -29,9 +29,9 @@ public abstract class BaseDAO<T extends EntityBase> {
     Class<? extends EntityBase> entityClazz;
 
     @SuppressWarnings("unchecked")
-	protected BaseDAO(DbUtils db) {
+	protected BaseDAO(DbUtils db, Class<? extends  EntityBase> entityClazz) {
 		this.db = db;
-        this.entityClazz = (Class<? extends EntityBase>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+        this.entityClazz = entityClazz;
         try {
             db.createTableIfNotExist(entityClazz);
         } catch (DbException e) {

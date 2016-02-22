@@ -99,22 +99,6 @@ public abstract class TotoroBaseActivity extends Activity implements IComponentC
     }
 
     /**
-     * 显示Toast形式的提示信息
-     * @param message
-     */
-    public void showMessage(String message) {
-        ToastUtil.showToast(this, message);
-    }
-
-    /**
-     * 显示Toast形式提示信息
-     * @param resId
-     */
-    public void showMessage(int resId) {
-        ToastUtil.showToast(this, resId);
-    }
-
-    /**
      * 关闭软键盘
      */
     protected void hideKeyboardForCurrentFocus() {
