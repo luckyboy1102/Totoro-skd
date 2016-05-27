@@ -11,7 +11,6 @@ import com.totoro.commons.Totoro;
 import com.totoro.database.QueryConst;
 import com.totoro.database.entity.EntityBase;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;

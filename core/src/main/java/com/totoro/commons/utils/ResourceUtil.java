@@ -1,7 +1,6 @@
 package com.totoro.commons.utils;
 
 import android.content.Context;
-import android.content.res.Resources;
 
 /**
  * Created by Chen on 2015/4/22.
@@ -53,6 +52,10 @@ public class ResourceUtil {
 
     public static int getAnimId(String paramString) {
         return getIdentifier(paramString, "anim");
+    }
+
+    public static int getArrayId(String paramString) {
+        return getIdentifier(paramString, "array");
     }
 
     public static String getString(String paramString) {
