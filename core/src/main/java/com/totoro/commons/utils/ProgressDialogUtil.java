@@ -40,6 +40,12 @@ public class ProgressDialogUtil {
         }
     }
 
+    public void setProgressDialogMessage(String text) {
+        if (mDialog != null) {
+            mDialog.setMessage(text);
+        }
+    }
+
     /**
      * Dismiss ProgressDialog
      */

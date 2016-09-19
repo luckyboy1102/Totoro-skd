@@ -18,6 +18,7 @@ package com.totoro.database.entity;
 import com.lidroid.xutils.db.annotation.Column;
 import com.totoro.database.annotation.SynchronizeField;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -25,7 +26,7 @@ import java.util.Date;
  * Date: 13-8-13
  * Time: 上午11:15
  */
-public abstract class EntityBase {
+public abstract class EntityBase implements Serializable {
 
     public static final String NORMAL = "1";
     public static final String DELETED = "0";
