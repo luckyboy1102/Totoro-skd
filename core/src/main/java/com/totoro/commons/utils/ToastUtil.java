@@ -16,13 +16,7 @@ public class ToastUtil {
      * @param text
      */
     public void showToast(String text) {
-        if (toast == null) {
-            toast = Toast.makeText(Totoro.getInstance().getContext(), text, Toast.LENGTH_SHORT);
-            toast.show();
-        } else {
-            toast.setText(text);
-            toast.show();
-        }
+        getToast(text, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -30,7 +24,25 @@ public class ToastUtil {
      * @param resId
      */
     public void showToast(int resId) {
-        showToast(Totoro.getInstance().getContext().getString(resId));
+        getToast(resId, Toast.LENGTH_SHORT).show();
+    }
+
+    public Toast getToast(int resId, int duration) {
+        if (toast == null) {
+            toast = Toast.makeText(Totoro.getInstance().getContext(), resId, duration);
+        } else {
+            toast.setText(resId);
+        }
+        return toast;
+    }
+
+    public Toast getToast(String text, int duration) {
+        if (toast == null) {
+            toast = Toast.makeText(Totoro.getInstance().getContext(), text, duration);
+        } else {
+            toast.setText(text);
+        }
+        return toast;
     }
 }
 
