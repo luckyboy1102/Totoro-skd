@@ -1,1 +1,1 @@
-include ':core', ':database'
+include ':core', ':database', ':datasync-annotation', ':datasync-compiler', ':datasync-test', ':datasync-test'
