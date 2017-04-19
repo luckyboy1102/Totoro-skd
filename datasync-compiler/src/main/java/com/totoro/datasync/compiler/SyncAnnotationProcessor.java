@@ -1,14 +1,14 @@
-package com.yuwell.datasync.compiler;
+package com.totoro.datasync.compiler;
 
 import com.google.auto.service.AutoService;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
-import com.yuwell.datasync.annotation.CursorType;
-import com.yuwell.datasync.annotation.SyncColumn;
-import com.yuwell.datasync.annotation.SyncForeignColumn;
-import com.yuwell.datasync.annotation.SyncTable;
+import com.totoro.datasync.CursorType;
+import com.totoro.datasync.annotation.SyncColumn;
+import com.totoro.datasync.annotation.SyncForeignColumn;
+import com.totoro.datasync.annotation.SyncTable;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.ProcessingEnvironment;

@@ -1,9 +1,9 @@
 package com.example.dayasync;
 
-import com.yuwell.datasync.annotation.CursorType;
-import com.yuwell.datasync.annotation.SyncColumn;
-import com.yuwell.datasync.annotation.SyncForeignColumn;
-import com.yuwell.datasync.annotation.SyncTable;
+import com.totoro.datasync.CursorType;
+import com.totoro.datasync.annotation.SyncColumn;
+import com.totoro.datasync.annotation.SyncForeignColumn;
+import com.totoro.datasync.annotation.SyncTable;
 
 /**
  * Created by chenshuai on 2017/4/14.

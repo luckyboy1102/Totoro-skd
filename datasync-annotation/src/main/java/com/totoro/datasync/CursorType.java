@@ -1,4 +1,4 @@
-package com.yuwell.datasync.annotation;
+package com.totoro.datasync;
 
 /**
  * Created by chenshuai on 2017/4/18.

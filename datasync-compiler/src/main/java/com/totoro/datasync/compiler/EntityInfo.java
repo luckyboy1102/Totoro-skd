@@ -1,8 +1,8 @@
-package com.yuwell.datasync.compiler;
+package com.totoro.datasync.compiler;
 
-import com.yuwell.datasync.annotation.SyncColumn;
-import com.yuwell.datasync.annotation.SyncForeignColumn;
-import com.yuwell.datasync.annotation.SyncTable;
+import com.totoro.datasync.annotation.SyncColumn;
+import com.totoro.datasync.annotation.SyncForeignColumn;
+import com.totoro.datasync.annotation.SyncTable;
 
 import javax.lang.model.element.TypeElement;
 import java.util.ArrayList;
